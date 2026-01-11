@@ -1,0 +1,60 @@
+{
+  "originHash" : "4caccf53ab7f8b8af2cd769dcaec653ff41fe99d36f01ca9e243cedab2ae52dd",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
+      }
+    },
+    {
+      "identity" : "chartview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppPear/ChartView",
+      "state" : {
+        "revision" : "9115a992c91fa19cbb4f2241084240d38654a1fc",
+        "version" : "1.5.5"
+      }
+    },
+    {
+      "identity" : "codablecsv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dehesa/CodableCSV",
+      "state" : {
+        "revision" : "99ace2cfdfbc19108b529c021005fb57a460e715",
+        "version" : "0.6.7"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON",
+      "state" : {
+        "branch" : "master",
+        "revision" : "af1f7a2007d607fbe735c445f19080df4260fe8e"
+      }
+    },
+    {
+      "identity" : "tppdf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/techprimate/TPPDF",
+      "state" : {
+        "revision" : "f9876a1bf56d93c6d78aed9cbb1753cd47030b99",
+        "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "uix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/buhe/UIx",
+      "state" : {
+        "revision" : "d1f31db67871b6037bce4eab8caa9fa5e65bda47",
+        "version" : "0.4.0"
+      }
+    }
+  ],
+  "version" : 3
+}

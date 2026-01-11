@@ -8,4 +8,4 @@ Manage all your assets in one app, understand the trend of your assets, understa
 - Trends in the amount of assets and the amount of each type of asset.
 - Export asset details as a file, protecting your data with biometrics.
 
-* All data is stored in icloud without additional login.
+[Contact us](mailto:bugu1986@gmail.com)
