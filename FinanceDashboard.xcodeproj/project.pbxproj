@@ -16,12 +16,12 @@
 		3F25F1D7296192AA00F4DA02 /* FinanceDashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25F1D6296192AA00F4DA02 /* FinanceDashboardTests.swift */; };
 		3F25F1E1296192AA00F4DA02 /* FinanceDashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25F1E0296192AA00F4DA02 /* FinanceDashboardUITests.swift */; };
 		3F25F1E3296192AA00F4DA02 /* FinanceDashboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25F1E2296192AA00F4DA02 /* FinanceDashboardUITestsLaunchTests.swift */; };
+		3F33D0602F1537AC00767CEE /* AnnualReturnChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33D05F2F1537AC00767CEE /* AnnualReturnChart.swift */; };
 		3F7421552979557D00A419A0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 3F7421542979557D00A419A0 /* CodableCSV */; };
 		3F7421572979584500A419A0 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7421562979584500A419A0 /* ExportView.swift */; };
 		3F74215A29795C8B00A419A0 /* TPPDF in Frameworks */ = {isa = PBXBuildFile; productRef = 3F74215929795C8B00A419A0 /* TPPDF */; };
 		3F74215C297A270300A419A0 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F74215B297A270300A419A0 /* TrendView.swift */; };
 		3F74215E297A272C00A419A0 /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F74215D297A272C00A419A0 /* TrendViewModel.swift */; };
-		3F742160297A502D00A419A0 /* TrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F74215F297A502D00A419A0 /* TrendChart.swift */; };
 		3F742162297CF9AA00A419A0 /* LineChartWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F742161297CF9A900A419A0 /* LineChartWrapper.swift */; };
 		3F7682732ABABC15005420AB /* InvestSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7682722ABABC15005420AB /* InvestSchedule.swift */; };
 		3F84065829875F0300BBA978 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F84065729875F0300BBA978 /* AnalysisView.swift */; };
@@ -81,10 +81,10 @@
 		3F25F1DC296192AA00F4DA02 /* FinanceDashboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceDashboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F25F1E0296192AA00F4DA02 /* FinanceDashboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceDashboardUITests.swift; sourceTree = "<group>"; };
 		3F25F1E2296192AA00F4DA02 /* FinanceDashboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceDashboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F33D05F2F1537AC00767CEE /* AnnualReturnChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnnualReturnChart.swift; path = ../AnnualReturnChart.swift; sourceTree = "<group>"; };
 		3F7421562979584500A419A0 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		3F74215B297A270300A419A0 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
 		3F74215D297A272C00A419A0 /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
-		3F74215F297A502D00A419A0 /* TrendChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendChart.swift; sourceTree = "<group>"; };
 		3F742161297CF9A900A419A0 /* LineChartWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartWrapper.swift; sourceTree = "<group>"; };
 		3F7682722ABABC15005420AB /* InvestSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestSchedule.swift; sourceTree = "<group>"; };
 		3F84065729875F0300BBA978 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
@@ -192,7 +192,6 @@
 				3F7421562979584500A419A0 /* ExportView.swift */,
 				3F74215B297A270300A419A0 /* TrendView.swift */,
 				3F25F1DF296192AA00F4DA02 /* FinanceDashboardUITests */,
-				3F74215F297A502D00A419A0 /* TrendChart.swift */,
 				3F742161297CF9A900A419A0 /* LineChartWrapper.swift */,
 				3F84065729875F0300BBA978 /* AnalysisView.swift */,
 				3F840659298768B700BBA978 /* AnalysisViewModel.swift */,
@@ -230,6 +229,7 @@
 		3F867E982AB6E98C0041AE57 /* analysis */ = {
 			isa = PBXGroup;
 			children = (
+				3F33D05F2F1537AC00767CEE /* AnnualReturnChart.swift */,
 				3F867E992AB6E9B00041AE57 /* InnerAnalysisView.swift */,
 			);
 			path = analysis;
@@ -390,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F33D0602F1537AC00767CEE /* AnnualReturnChart.swift in Sources */,
 				3F8EE1C62973DD1D0013C74E /* CardView.swift in Sources */,
 				3F8EE1C22972BE470013C74E /* Exportor.swift in Sources */,
 				3F8EE1BA297294670013C74E /* Ex.swift in Sources */,
@@ -400,7 +401,6 @@
 				3FEB41D02976854F00A5118D /* CurrencyView.swift in Sources */,
 				3F7682732ABABC15005420AB /* InvestSchedule.swift in Sources */,
 				3F74215E297A272C00A419A0 /* TrendViewModel.swift in Sources */,
-				3F742160297A502D00A419A0 /* TrendChart.swift in Sources */,
 				3F867E9A2AB6E9B00041AE57 /* InnerAnalysisView.swift in Sources */,
 				3F7421572979584500A419A0 /* ExportView.swift in Sources */,
 				3F8EE1BC2972A47F0013C74E /* SettingView.swift in Sources */,

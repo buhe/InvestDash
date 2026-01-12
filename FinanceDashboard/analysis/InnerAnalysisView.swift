@@ -10,6 +10,7 @@ import SwiftUICharts
 import Combine
 import UIx
 import SwiftyJSON
+import UIKit
 
 struct InnerAnalysisView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -28,6 +29,9 @@ struct InnerAnalysisView: View {
     @AppStorage(wrappedValue: "waiting...", "recommend") var recommend
     @AppStorage(wrappedValue: false, "incldueEstate") var incldueEstate: Bool
     @State private var showingIAP = false
+    @State private var selectedYear: String? = nil
+    @State private var selectedReturnRate: Double? = nil
+    @State private var annualizedReturns: [(year: Int, returnRate: Double)] = []
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -40,19 +44,6 @@ struct InnerAnalysisView: View {
         ScrollView{
             VStack(alignment: .leading){
                 HStack {
-//                    Text("Age:")
-//                    TextField("Age", text: $age)
-//                        .keyboardType(.numbersAndPunctuation)
-//                        .onAppear{
-//                            age = String(overViewModel.model.age)
-//                        }
-//                        .onChange(of: age){
-//                            a in
-//                            if let a = Int(a) {
-//                                overViewModel.model.age = a
-//                            }
-//                        }
-//                        .frame(width: 44)
                     Text("Equity vs. Conservative:")
                     Text("\(percentFormat(value:ratio))")
                         .foregroundColor(self.risk)
@@ -61,7 +52,7 @@ struct InnerAnalysisView: View {
                                 self.ratio = await analysisViewModel.actualRatio(overviews: overViewModel.byCategory(items: items, viewContext: viewContext))
                                 self.risk = analysisViewModel.risk(ratio: self.ratio)
                             }
-                        }.onChange(of: try! JSON(self.items)){
+                        }.onChange(of: JSON(self.items)){
                             _ in
                             Task{
                                 self.ratio = await analysisViewModel.actualRatio(overviews: overViewModel.byCategory(items: items, viewContext: viewContext))
@@ -90,6 +81,7 @@ struct InnerAnalysisView: View {
                 
                 PieChartView(data: [1 - ratio, ratio], title: "Equity vs. Conservative", style: colorScheme == .light ? ChartStyle(backgroundColor: Color.white, accentColor: Colors.BorderBlue, secondGradientColor: Colors.BorderBlue, textColor: Color.black, legendTextColor: Color.black, dropShadowColor: .gray) : ChartStyle(backgroundColor: Color.gray, accentColor: Colors.DarkPurple, secondGradientColor: Colors.DarkPurple, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: .gray), form: ChartForm.extraLarge)
                     .padding(.top)
+                
                 Text("Summary")
                     .font(.title2)
                     .padding(.top)
@@ -106,28 +98,29 @@ struct InnerAnalysisView: View {
                         }
                     }
                     .lineLimit(20)
-                Spacer()
+                    .padding(.bottom)
+                AnnualReturnChart(
+                    data: analysisViewModel.getReturnValues(annualizedReturns: annualizedReturns),
+                    title: "Annual Return"
+                )
+//                .frame(height: 200)
+                .padding(.vertical)
+                .task {
+                    self.annualizedReturns = await analysisViewModel.calculateAnnualizedReturns(items: items, viewContext: viewContext)
+                }
+                .onChange(of: JSON(self.items)) { _ in
+                    Task {
+                        self.annualizedReturns = await analysisViewModel.calculateAnnualizedReturns(items: items, viewContext: viewContext)
+                    }
+                }
             }
             .padding()
             HStack{
                 Image(systemName: "house")
                 Toggle("Include Estate", isOn: $incldueEstate)
-                //                    .onReceive(Just(incldueEstate)) {
-                //                        value in
-                //                        // true -> fasle
-                //                        if value {
-                //                            //                                print("receive: \(value)")
-                //                            if !overViewModel.model.iap {
-                //                                incldueEstate.toggle()
-                //                                showingIAP = true
-                //                            }
-                //                        }
-                //
-                //                    }
             }
             .padding(.horizontal)
         }
-        .tabbar("By Age Analysis")
     }
 }
 
